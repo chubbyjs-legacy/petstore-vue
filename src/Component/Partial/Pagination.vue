@@ -1,5 +1,5 @@
 <template>
-  <ul v-if="pages" class="pagination">
+  <ul v-if="pages.length > 1" class="pagination">
     <li v-if="currentPage > 2">
       <button v-on:click="submitPage(1)">&laquo;</button>
     </li>
@@ -16,7 +16,7 @@
       <button v-on:click="submitPage(currentPage + 1)">&gt;</button>
     </li>
     <li v-if="currentPage < totalPages - 1">
-      <button v-on:click="submitPage(totalPages)">&gt;</button>
+      <button v-on:click="submitPage(totalPages)">&raquo;</button>
     </li>
   </ul>
 </template>

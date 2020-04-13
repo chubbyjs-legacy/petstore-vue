@@ -35,7 +35,7 @@
           >Add</button>
         </div>
       </div>
-      <button data-testid="submit-pet" class="btn-blue">Save</button>
+      <button type="submit" data-testid="submit-pet" class="btn-blue">Save</button>
     </fieldset>
   </form>
 </template>
@@ -68,7 +68,7 @@ export default Vue.extend({
     };
   },
   computed: {
-    invalidParameterByNameDenormalized(): Record<string, any> {
+    invalidParameterByNameDenormalized(): Record<string, Array<InvalidParameter>> {
       return InvalidParameterByNameDenormalizer(
         this.unprocessableEntity
           ? this.unprocessableEntity.invalidParameters

@@ -6,7 +6,7 @@
         v-model="petFilters.name"
         :invalidParameters="getInvalidParameterByNameDenormalizedByName('name')"
       />
-      <button data-testid="submit-pet-filter" class="btn-blue">Filter</button>
+      <button type="submit" data-testid="submit-pet-filter" class="btn-blue">Filter</button>
     </fieldset>
   </form>
 </template>
@@ -37,7 +37,7 @@ export default Vue.extend({
     };
   },
   computed: {
-    invalidParameterByNameDenormalized(): Record<string, any> {
+    invalidParameterByNameDenormalized(): Record<string, Array<InvalidParameter>> {
       return InvalidParameterByNameDenormalizer(
         this.badRequest ? this.badRequest.invalidParameters : []
       );

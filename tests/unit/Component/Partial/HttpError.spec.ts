@@ -1,28 +1,29 @@
 import { shallowMount } from '@vue/test-utils';
-import HttpError from '../../../../src/Component/Partial/HttpError.vue';
-import HttpErrorWithInvalidArguments from '../../../../src/Model/Error/HttpErrorWithInvalidArguments';
+import HttpError from '../../../../src/Model/Error/HttpError';
+import HttpErrorPartial from '../../../../src/Component/Partial/HttpError.vue';
+import HttpErrorWithInvalidParameters from '../../../../src/Model/Error/HttpErrorWithInvalidParameters';
 
 test('minimal', () => {
-    const httpError = new HttpErrorWithInvalidArguments({
+    const httpError = new HttpError({
         title: 'This is the title'
     });
 
-    const wrapper = shallowMount(HttpError, {
+    const wrapper = shallowMount(HttpErrorPartial, {
         propsData: { httpError: httpError }
     });
 
-    expect(wrapper.html().replace(/\n/g, '').replace(/ {2,}/g, '')).toBe(`
+    expect(wrapper.html().replace(/\n/g, '').replace(/ {2,}/g, '').replace(/> </g, '><')).toBe(`
         <div id="httpError">
             <p>This is the title</p>
             <!---->
             <!---->
-            <ul></ul>
+            <!---->
         </div>
-    `.replace(/\n/g, '').replace(/ {2,}/g, ''));
+    `.replace(/\n/g, '').replace(/ {2,}/g, '').replace(/> </g, '><'));
 });
 
 test('maximal', () => {
-    const httpError = new HttpErrorWithInvalidArguments({
+    const httpError = new HttpErrorWithInvalidParameters({
         title: 'This is the title',
         detail: 'This is the detail',
         instance: 'This is the instance',
@@ -31,11 +32,11 @@ test('maximal', () => {
         ]
     });
 
-    const wrapper = shallowMount(HttpError, {
+    const wrapper = shallowMount(HttpErrorPartial, {
         propsData: { httpError: httpError }
     });
 
-    expect(wrapper.html().replace(/\n/g, '').replace(/ {2,}/g, '')).toBe(`
+    expect(wrapper.html().replace(/\n/g, '').replace(/ {2,}/g, '').replace(/> </g, '><')).toBe(`
         <div id="httpError">
             <p>This is the title</p>
             <p>This is the detail</p>
@@ -44,5 +45,5 @@ test('maximal', () => {
                 <li><strong>Invalid Parameter Name</strong>: Invalid Parameter Reason</li>
             </ul>
         </div>
-    `.replace(/\n/g, '').replace(/ {2,}/g, ''));
+    `.replace(/\n/g, '').replace(/ {2,}/g, '').replace(/> </g, '><'));
 });
