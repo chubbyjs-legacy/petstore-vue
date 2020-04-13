@@ -16,7 +16,7 @@ const routes: Array<RouteConfig> = [
         path: '/pet',
         component: () => import('../Component/Page/Pet/List.vue'),
         meta: {
-            title: 'Pet List',
+            title: 'List Pets',
         }
     },
     {

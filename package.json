@@ -49,7 +49,10 @@
     "parserOptions": {
       "ecmaVersion": 2020
     },
-    "rules": {},
+    "rules": {
+      "@typescript-eslint/member-delimiter-style": "off",
+      "no-extra-semi": "off"
+    },
     "overrides": [
       {
         "files": [
