@@ -30,10 +30,10 @@
 import Vue from "vue";
 import { de } from "date-fns/locale";
 import { format } from "date-fns";
-import { ReadPet } from "@/ApiClient/Pet";
-import HttpError from "@/Model/Error/HttpError";
-import PetResponse from "@/Model/Pet/PetResponse";
-import HttpErrorPartial from "@/Component/Partial/HttpError.vue";
+import { ReadPet } from "../../../ApiClient/Pet";
+import HttpError from "../../../Model/Error/HttpError";
+import PetResponse from "../../../Model/Pet/PetResponse";
+import HttpErrorPartial from "../../Partial/HttpError.vue";
 
 export default Vue.extend({
   name: "PetRead",

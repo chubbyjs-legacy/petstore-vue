@@ -12,12 +12,12 @@
 
 <script lang="ts">
 import Vue from "vue";
-import { CreatePet } from "@/ApiClient/Pet";
-import HttpError from "@/Model/Error/HttpError";
-import HttpErrorPartial from "@/Component/Partial/HttpError.vue";
-import PetForm from "@/Component/Form/PetForm.vue";
-import PetRequest from "@/Model/Pet/PetRequest";
-import UnprocessableEntity from "@/Model/Error/UnprocessableEntity";
+import { CreatePet } from "../../../ApiClient/Pet";
+import HttpError from "../../../Model/Error/HttpError";
+import HttpErrorPartial from "../../Partial/HttpError.vue";
+import PetForm from "../../Form/PetForm.vue";
+import PetRequest from "../../../Model/Pet/PetRequest";
+import UnprocessableEntity from "../../../Model/Error/UnprocessableEntity";
 
 export default Vue.extend({
   name: "PetCreate",

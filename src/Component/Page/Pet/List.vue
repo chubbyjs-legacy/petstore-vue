@@ -58,15 +58,15 @@
 import Vue from "vue";
 import { de } from "date-fns/locale";
 import { format } from "date-fns";
-import { ListPets, DeletePet } from "@/ApiClient/Pet";
+import { ListPets, DeletePet } from "../../../ApiClient/Pet";
 import { Route } from "vue-router";
-import BadRequest from "@/Model/Error/BadRequest";
-import HttpError from "@/Model/Error/HttpError";
-import HttpErrorPartial from "@/Component/Partial/HttpError.vue";
-import Pagination from "@/Component/Partial/Pagination.vue";
-import PetFilterForm from "@/Component/Form/PetFilterForm.vue";
-import PetFilters from "@/Model/Pet/PetFilters";
-import PetList from "@/Model/Pet/PetList";
+import BadRequest from "../../../Model/Error/BadRequest";
+import HttpError from "../../../Model/Error/HttpError";
+import HttpErrorPartial from "../../Partial/HttpError.vue";
+import Pagination from "../../Partial/Pagination.vue";
+import PetFilterForm from "../../Form/PetFilterForm.vue";
+import PetFilters from "../../../Model/Pet/PetFilters";
+import PetList from "../../../Model/Pet/PetList";
 import qs from "qs";
 
 type query = {

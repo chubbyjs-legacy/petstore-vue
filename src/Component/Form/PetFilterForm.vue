@@ -13,8 +13,8 @@
 
 <script lang="ts">
 import Vue from "vue";
-import InvalidParameterByNameDenormalizer from "@/Denormalizer/InvalidParameterByNameDenormalizer";
-import TextField from "@/Component/Form/TextField.vue";
+import InvalidParameterByNameDenormalizer from "../../Denormalizer/InvalidParameterByNameDenormalizer";
+import TextField from "./TextField.vue";
 import InvalidParameter from "../../Model/Error/InvalidParameter";
 import PetFilters from "../../Model/Pet/PetFilters";
 import BadRequest from "../../Model/Error/BadRequest";

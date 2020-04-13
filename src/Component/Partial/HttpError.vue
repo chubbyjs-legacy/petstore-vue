@@ -14,8 +14,8 @@
 
 <script lang="ts">
 import Vue from "vue";
-import HttpError from "@/Model/Error/HttpError";
-import HttpErrorWithInvalidArguments from "@/Model/Error/HttpErrorWithInvalidArguments";
+import HttpError from "../../Model/Error/HttpError";
+import HttpErrorWithInvalidArguments from "../../Model/Error/HttpErrorWithInvalidArguments";
 
 export default Vue.extend({
   name: "HttpError",
