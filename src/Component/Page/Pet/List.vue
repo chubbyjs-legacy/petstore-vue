@@ -1,6 +1,6 @@
 <template>
   <div v-if="petList || httpError">
-    <http-error-partial v-if="httpError" :http-error="httpError" />
+    <http-error-partial v-if="httpError" :httpError="httpError" />
     <h1>List Pets</h1>
     <div v-if="petList">
       <router-link v-if="petList._links.create" to="/pet/create" class="btn-green mb-4">Create</router-link>
@@ -18,15 +18,15 @@
             <th>
               Name (&nbsp;
               <router-link :to="sortLink('name', 'asc')" data-testid="sort-pet-name-asc">A-Z</router-link>&nbsp;|
-              <router-link :to="sortLink('name', 'desc')" data-testid="sort-pet-name-asc">Z-A</router-link>&nbsp;|
-              <router-link :to="sortLink('name', undefined)" data-testid="sort-pet-name-asc">---</router-link>&nbsp;)
+              <router-link :to="sortLink('name', 'desc')" data-testid="sort-pet-name-desc">Z-A</router-link>&nbsp;|
+              <router-link :to="sortLink('name', undefined)" data-testid="sort-pet-name--">---</router-link>&nbsp;)
             </th>
             <th>Tag</th>
             <th>Actions</th>
           </tr>
         </thead>
         <tbody>
-          <tr v-for="pet in petList._embedded.items" :key="pet.id">
+          <tr v-for="(pet, i) in petList._embedded.items" :key="i">
             <td>{{pet.id}}</td>
             <td>{{dateFormat(pet.createdAt)}}</td>
             <td>{{dateFormat(pet.updatedAt)}}</td>
@@ -39,14 +39,14 @@
                 :to="`/pet/${pet.id}/update`"
                 class="btn-gray mr-4"
               >Update</router-link>
-              <button v-if="pet._links.delete" v-on:click="deletePet(pet.id)" class="btn-red">Delete</button>
+              <button v-if="pet._links.delete" :data-testid="`remove-pet-${i}`" v-on:click="deletePet(pet.id)" class="btn-red">Delete</button>
             </td>
           </tr>
         </tbody>
       </table>
       <pagination
         :currentPage="query.page"
-        :totalPages="totalPages"
+        :totalPages="Math.ceil(this.petList.count / this.petList.limit)"
         :maxPages="7"
         :submitPage="changePage"
       />
@@ -113,13 +113,6 @@ export default Vue.extend({
         sort: this.query.sort
       });
     },
-    totalPages(): number {
-      if (!this.petList) {
-        return 1;
-      }
-
-      return Math.ceil(this.petList.count / this.petList.limit);
-    }
   },
   methods: {
     updateQuery(route: Route): void {

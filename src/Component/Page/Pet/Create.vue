@@ -1,6 +1,6 @@
 <template>
   <div>
-    <http-error-partial v-if="httpError" :http-error="httpError" />
+    <http-error-partial v-if="httpError" :httpError="httpError" />
     <h1>Create Pet</h1>
       <pet-form
         :submitPet="submitPet"

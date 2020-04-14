@@ -1,6 +1,6 @@
 <template>
   <div v-if="pet || httpError">
-    <http-error-partial v-if="httpError" :http-error="httpError" />
+    <http-error-partial v-if="httpError" :httpError="httpError" />
     <h1>Read Pet</h1>
     <div v-if="pet">
       <dl>

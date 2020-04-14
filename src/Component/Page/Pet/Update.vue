@@ -1,6 +1,6 @@
 <template>
   <div v-if="pet || httpError">
-    <http-error-partial v-if="httpError" :http-error="httpError" />
+    <http-error-partial v-if="httpError" :httpError="httpError" />
     <h1>Update Pet</h1>
     <pet-form :submitPet="submitPet" :defaultPet="pet" :unprocessableEntity="unprocessableEntity" />
     <router-link to="/pet" class="btn-gray mb-4">List</router-link>
