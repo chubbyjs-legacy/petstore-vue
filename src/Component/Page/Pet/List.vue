@@ -39,7 +39,12 @@
                 :to="`/pet/${pet.id}/update`"
                 class="btn-gray mr-4"
               >Update</router-link>
-              <button v-if="pet._links.delete" :data-testid="`remove-pet-${i}`" v-on:click="deletePet(pet.id)" class="btn-red">Delete</button>
+              <button
+                v-if="pet._links.delete"
+                :data-testid="`remove-pet-${i}`"
+                v-on:click="deletePet(pet.id)"
+                class="btn-red"
+              >Delete</button>
             </td>
           </tr>
         </tbody>
@@ -112,7 +117,7 @@ export default Vue.extend({
         filters: this.query.filters,
         sort: this.query.sort
       });
-    },
+    }
   },
   methods: {
     updateQuery(route: Route): void {

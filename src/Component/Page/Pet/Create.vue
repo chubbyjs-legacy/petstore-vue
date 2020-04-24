@@ -2,10 +2,7 @@
   <div>
     <http-error-partial v-if="httpError" :httpError="httpError" />
     <h1>Create Pet</h1>
-      <pet-form
-        :submitPet="submitPet"
-        :unprocessableEntity="unprocessableEntity"
-      />
+    <pet-form :submitPet="submitPet" :unprocessableEntity="unprocessableEntity" />
     <router-link to="/pet" class="btn-gray mb-4">List</router-link>
   </div>
 </template>
