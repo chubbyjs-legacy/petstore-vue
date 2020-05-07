@@ -124,13 +124,21 @@ export default Vue.extend({
       const searchStart = route.fullPath.search(/\?/);
       const search =
         searchStart !== -1 ? route.fullPath.substring(searchStart) : "";
-      const query = qs.parse(search.substr(1));
-
-      query.page = parseInt(query.page ? query.page : "1");
-      query.filters = query.filters ? query.filters : {};
-      query.sort = query.sort ? query.sort : {};
-
-      this.query = query;
+      const parsedQuery = qs.parse(search.substr(1));
+      this.query = {
+        page:
+          typeof parsedQuery.page === "string" ? parseInt(parsedQuery.page) : 1,
+        filters:
+          typeof parsedQuery.filters === "object" &&
+          !(parsedQuery.filters instanceof Array)
+            ? parsedQuery.filters
+            : {},
+        sort:
+          typeof parsedQuery.sort === "object" &&
+          !(parsedQuery.sort instanceof Array)
+            ? parsedQuery.sort
+            : {}
+      };
     },
     dateFormat(date: string): string {
       if (!date) {
