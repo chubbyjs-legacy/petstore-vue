@@ -53,7 +53,7 @@ test('not found', async () => {
             <http-error-partial-stub httperror="[object Object]"></http-error-partial-stub>
             <h1>Update Pet</h1>
             <pet-form-stub submitpet="function () { [native code] }"></pet-form-stub>
-            <router-link-stub to="/pet" tag="a" event="click" class="btn-gray mb-4">List</router-link-stub>
+            <router-link-stub to="/pet" tag="a" ariacurrentvalue="page" event="click" class="btn-gray mb-4">List</router-link-stub>
         </div>
     `.replace(/\n/g, '').replace(/ {2,}/g, '').replace(/> </g, '><'));
 });
@@ -90,7 +90,7 @@ test('minimal', async () => {
             <!---->
             <h1>Update Pet</h1>
             <pet-form-stub submitpet="function () { [native code] }" defaultpet="[object Object]"></pet-form-stub>
-            <router-link-stub to="/pet" tag="a" event="click" class="btn-gray mb-4">List</router-link-stub>
+            <router-link-stub to="/pet" tag="a" ariacurrentvalue="page" event="click" class="btn-gray mb-4">List</router-link-stub>
         </div>
     `.replace(/\n/g, '').replace(/ {2,}/g, '').replace(/> </g, '><'));
 });
@@ -155,7 +155,7 @@ test('unprocessable entity', async () => {
             <http-error-partial-stub httperror="[object Object]"></http-error-partial-stub>
             <h1>Update Pet</h1>
             <button data-testid="test-button" defaultpet="[object Object]" unprocessableentity="[object Object]"></button>
-            <router-link-stub to="/pet" tag="a" event="click" class="btn-gray mb-4">List</router-link-stub>
+            <router-link-stub to="/pet" tag="a" ariacurrentvalue="page" event="click" class="btn-gray mb-4">List</router-link-stub>
         </div>
     `.replace(/\n/g, '').replace(/ {2,}/g, '').replace(/> </g, '><'));
 });

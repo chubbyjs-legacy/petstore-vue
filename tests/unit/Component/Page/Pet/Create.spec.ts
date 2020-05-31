@@ -38,7 +38,7 @@ test('default', () => {
             <!---->
             <h1>Create Pet</h1>
             <pet-form-stub submitpet="function () { [native code] }"></pet-form-stub>
-            <router-link-stub to="/pet" tag="a" event="click" class="btn-gray mb-4">List</router-link-stub>
+            <router-link-stub to="/pet" tag="a" ariacurrentvalue="page" event="click" class="btn-gray mb-4">List</router-link-stub>
         </div>
     `.replace(/\n/g, '').replace(/ {2,}/g, '').replace(/> </g, '><'));
 });
@@ -86,7 +86,7 @@ test('unprocessable entity', async () => {
             <http-error-partial-stub httperror="[object Object]"></http-error-partial-stub>
             <h1>Create Pet</h1>
             <button data-testid="test-button" unprocessableentity="[object Object]"></button>
-            <router-link-stub to="/pet" tag="a" event="click" class="btn-gray mb-4">List</router-link-stub>
+            <router-link-stub to="/pet" tag="a" ariacurrentvalue="page" event="click" class="btn-gray mb-4">List</router-link-stub>
         </div>
     `.replace(/\n/g, '').replace(/ {2,}/g, '').replace(/> </g, '><'));
 });

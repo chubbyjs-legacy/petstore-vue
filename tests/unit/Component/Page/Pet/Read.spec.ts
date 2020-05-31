@@ -95,7 +95,7 @@ test('minimal', async () => {
                     <dt>Vaccinations</dt>
                     <dd><!----></dd>
                 </dl>
-                <router-link-stub to="/pet" tag="a" event="click" class="btn-gray mb-4">List</router-link-stub>
+                <router-link-stub to="/pet" tag="a" ariacurrentvalue="page" event="click" class="btn-gray mb-4">List</router-link-stub>
             </div>
         </div>
     `.replace(/\n/g, '').replace(/ {2,}/g, '').replace(/> </g, '><'));
@@ -156,7 +156,7 @@ test('maximal', async () => {
                         </ul>
                     </dd>
                 </dl>
-                <router-link-stub to="/pet" tag="a" event="click" class="btn-gray mb-4">List</router-link-stub>
+                <router-link-stub to="/pet" tag="a" ariacurrentvalue="page" event="click" class="btn-gray mb-4">List</router-link-stub>
             </div>
         </div>
     `.replace(/\n/g, '').replace(/ {2,}/g, '').replace(/> </g, '><'));

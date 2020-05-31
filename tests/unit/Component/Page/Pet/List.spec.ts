@@ -141,7 +141,7 @@ test('default', async () => {
             <!---->
             <h1>List Pets</h1>
             <div>
-                <router-link-stub to="/pet/create" tag="a" event="click" class="btn-green mb-4">Create</router-link-stub>
+                <router-link-stub to="/pet/create" tag="a" ariacurrentvalue="page" event="click" class="btn-green mb-4">Create</router-link-stub>
                 <pet-filter-form-stub submitpetfilter="function () { [native code] }" defaultpetfilters="[object Object]"></pet-filter-form-stub>
                 <table class="my-4">
                     <thead>
@@ -152,13 +152,13 @@ test('default', async () => {
                             <th>
                                 Name (
                                     &nbsp;
-                                    <router-link-stub to="/pet?page=1&amp;sort%5Bname%5D=asc" tag="a" event="click" data-testid="sort-pet-name-asc">A-Z</router-link-stub>
+                                    <router-link-stub to="/pet?page=1&amp;sort%5Bname%5D=asc" tag="a" ariacurrentvalue="page" event="click" data-testid="sort-pet-name-asc">A-Z</router-link-stub>
                                     &nbsp;
                                     |
-                                    <router-link-stub to="/pet?page=1&amp;sort%5Bname%5D=desc" tag="a" event="click" data-testid="sort-pet-name-desc">Z-A</router-link-stub>
+                                    <router-link-stub to="/pet?page=1&amp;sort%5Bname%5D=desc" tag="a" ariacurrentvalue="page" event="click" data-testid="sort-pet-name-desc">Z-A</router-link-stub>
                                     &nbsp;
                                     |
-                                    <router-link-stub to="/pet?page=1" tag="a" event="click" data-testid="sort-pet-name--">---</router-link-stub>
+                                    <router-link-stub to="/pet?page=1" tag="a" ariacurrentvalue="page" event="click" data-testid="sort-pet-name--">---</router-link-stub>
                                     &nbsp;
                                 )
                             </th>
@@ -174,8 +174,8 @@ test('default', async () => {
                             <td>Brownie</td>
                             <td>0001-000</td>
                             <td>
-                                <router-link-stub to="/pet/4d783b77-eb09-4603-b99b-f590b605eaa9" tag="a" event="click" class="btn-gray mr-4">Read</router-link-stub>
-                                <router-link-stub to="/pet/4d783b77-eb09-4603-b99b-f590b605eaa9/update" tag="a" event="click" class="btn-gray mr-4">Update</router-link-stub>
+                                <router-link-stub to="/pet/4d783b77-eb09-4603-b99b-f590b605eaa9" tag="a" ariacurrentvalue="page" event="click" class="btn-gray mr-4">Read</router-link-stub>
+                                <router-link-stub to="/pet/4d783b77-eb09-4603-b99b-f590b605eaa9/update" tag="a" ariacurrentvalue="page" event="click" class="btn-gray mr-4">Update</router-link-stub>
                                 <button data-testid="remove-pet-0" class="btn-red">Delete</button>
                             </td>
                         </tr>
@@ -245,13 +245,13 @@ test('no actions', async () => {
                             <th>
                                 Name (
                                     &nbsp;
-                                    <router-link-stub to="/pet?page=1&amp;sort%5Bname%5D=asc" tag="a" event="click" data-testid="sort-pet-name-asc">A-Z</router-link-stub>
+                                    <router-link-stub to="/pet?page=1&amp;sort%5Bname%5D=asc" tag="a" ariacurrentvalue="page" event="click" data-testid="sort-pet-name-asc">A-Z</router-link-stub>
                                     &nbsp;
                                     |
-                                    <router-link-stub to="/pet?page=1&amp;sort%5Bname%5D=desc" tag="a" event="click" data-testid="sort-pet-name-desc">Z-A</router-link-stub>
+                                    <router-link-stub to="/pet?page=1&amp;sort%5Bname%5D=desc" tag="a" ariacurrentvalue="page" event="click" data-testid="sort-pet-name-desc">Z-A</router-link-stub>
                                     &nbsp;
                                     |
-                                    <router-link-stub to="/pet?page=1" tag="a" event="click" data-testid="sort-pet-name--">---</router-link-stub>
+                                    <router-link-stub to="/pet?page=1" tag="a" ariacurrentvalue="page" event="click" data-testid="sort-pet-name--">---</router-link-stub>
                                     &nbsp;
                                 )
                             </th>
@@ -387,7 +387,7 @@ test('submit bad request', async () => {
             <http-error-partial-stub httperror="[object Object]"></http-error-partial-stub>
             <h1>List Pets</h1>
             <div>
-                <router-link-stub to="/pet/create" tag="a" event="click" class="btn-green mb-4">Create</router-link-stub>
+                <router-link-stub to="/pet/create" tag="a" ariacurrentvalue="page" event="click" class="btn-green mb-4">Create</router-link-stub>
                 <button data-testid="test-filter-button" defaultpetfilters="[object Object]" badrequest="[object Object]"></button>
                 <table class="my-4">
                     <thead>
@@ -398,13 +398,13 @@ test('submit bad request', async () => {
                             <th>
                                 Name (
                                     &nbsp;
-                                    <router-link-stub to="/pet?page=1&amp;sort%5Bname%5D=asc" tag="a" event="click" data-testid="sort-pet-name-asc">A-Z</router-link-stub>
+                                    <router-link-stub to="/pet?page=1&amp;sort%5Bname%5D=asc" tag="a" ariacurrentvalue="page" event="click" data-testid="sort-pet-name-asc">A-Z</router-link-stub>
                                     &nbsp;
                                     |
-                                    <router-link-stub to="/pet?page=1&amp;sort%5Bname%5D=desc" tag="a" event="click" data-testid="sort-pet-name-desc">Z-A</router-link-stub>
+                                    <router-link-stub to="/pet?page=1&amp;sort%5Bname%5D=desc" tag="a" ariacurrentvalue="page" event="click" data-testid="sort-pet-name-desc">Z-A</router-link-stub>
                                     &nbsp;
                                     |
-                                    <router-link-stub to="/pet?page=1" tag="a" event="click" data-testid="sort-pet-name--">---</router-link-stub>
+                                    <router-link-stub to="/pet?page=1" tag="a" ariacurrentvalue="page" event="click" data-testid="sort-pet-name--">---</router-link-stub>
                                     &nbsp;
                                 )
                             </th>
@@ -420,8 +420,8 @@ test('submit bad request', async () => {
                             <td>Brownie</td>
                             <td>0001-000</td>
                             <td>
-                                <router-link-stub to="/pet/4d783b77-eb09-4603-b99b-f590b605eaa9" tag="a" event="click" class="btn-gray mr-4">Read</router-link-stub>
-                                <router-link-stub to="/pet/4d783b77-eb09-4603-b99b-f590b605eaa9/update" tag="a" event="click" class="btn-gray mr-4">Update</router-link-stub>
+                                <router-link-stub to="/pet/4d783b77-eb09-4603-b99b-f590b605eaa9" tag="a" ariacurrentvalue="page" event="click" class="btn-gray mr-4">Read</router-link-stub>
+                                <router-link-stub to="/pet/4d783b77-eb09-4603-b99b-f590b605eaa9/update" tag="a" ariacurrentvalue="page" event="click" class="btn-gray mr-4">Update</router-link-stub>
                                 <button data-testid="remove-pet-0" class="btn-red">Delete</button>
                             </td>
                         </tr>
