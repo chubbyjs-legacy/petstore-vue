@@ -37,7 +37,7 @@ export default Vue.extend({
     };
   },
   computed: {
-    invalidParameterByNameDenormalized(): Record<string, Array<InvalidParameter>> {
+    invalidParameterByNameDenormalized(): Map<string, Array<InvalidParameter>> {
       return InvalidParameterByNameDenormalizer(
         this.badRequest ? this.badRequest.invalidParameters : []
       );
@@ -54,7 +54,7 @@ export default Vue.extend({
     getInvalidParameterByNameDenormalizedByName(
       name: string
     ): Array<InvalidParameter> {
-      return this.invalidParameterByNameDenormalized[name] ?? [];
+      return this.invalidParameterByNameDenormalized.get(name) ?? [];
     }
   },
   created() {

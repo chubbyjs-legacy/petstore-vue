@@ -68,7 +68,7 @@ export default Vue.extend({
     };
   },
   computed: {
-    invalidParameterByNameDenormalized(): Record<string, Array<InvalidParameter>> {
+    invalidParameterByNameDenormalized(): Map<string, Array<InvalidParameter>> {
       return InvalidParameterByNameDenormalizer(
         this.unprocessableEntity
           ? this.unprocessableEntity.invalidParameters
@@ -93,7 +93,7 @@ export default Vue.extend({
     getInvalidParameterByNameDenormalizedByName(
       name: string
     ): Array<InvalidParameter> {
-      return this.invalidParameterByNameDenormalized[name] ?? [];
+      return this.invalidParameterByNameDenormalized.get(name) ?? [];
     }
   },
   created() {
