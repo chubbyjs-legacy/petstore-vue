@@ -76,8 +76,8 @@ import qs from "qs";
 
 type query = {
   page: number;
-  filters: object;
-  sort: object;
+  filters: Record<string, unknown>;
+  sort: Record<string, unknown>;
 };
 
 export default Vue.extend({
