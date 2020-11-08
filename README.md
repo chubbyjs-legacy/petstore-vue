@@ -1,7 +1,7 @@
 # petstore-vue
 
-[![Build Status](https://api.travis-ci.org/chubbyphp/petstore-vue.png?branch=master)](https://travis-ci.org/chubbyphp/petstore-vue)
-[![Coverage Status](https://coveralls.io/repos/github/chubbyphp/petstore-vue/badge.svg?branch=master)](https://coveralls.io/github/chubbyphp/petstore-vue?branch=master)
+[![Build Status](https://api.travis-ci.org/chubbyjs/petstore-vue.png?branch=master)](https://travis-ci.org/chubbyjs/petstore-vue)
+[![Coverage Status](https://coveralls.io/repos/github/chubbyjs/petstore-vue/badge.svg?branch=master)](https://coveralls.io/github/chubbyjs/petstore-vue?branch=master)
 
 ## Description
 
