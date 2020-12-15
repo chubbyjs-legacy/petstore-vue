@@ -21,7 +21,7 @@ beforeEach(() => {
 
 test('not found', async () => {
     mockReadPet = async (id: string) => {
-        return new Promise((resolve) => resolve(new NotFound({ title: 'title' })));
+        return new Promise<NotFound>((resolve) => resolve(new NotFound({ title: 'title' })));
     };
 
     const localVue = createLocalVue();
@@ -57,7 +57,7 @@ test('minimal', async () => {
     });
 
     mockReadPet = async (id: string) => {
-        return new Promise((resolve) => resolve(pet));
+        return new Promise<PetResponse>((resolve) => resolve(pet));
     };
 
     const localVue = createLocalVue();
@@ -114,7 +114,7 @@ test('maximal', async () => {
     });
 
     mockReadPet = async (id: string) => {
-        return new Promise((resolve) => resolve(pet));
+        return new Promise<PetResponse>((resolve) => resolve(pet));
     };
 
     const localVue = createLocalVue();

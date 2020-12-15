@@ -29,7 +29,7 @@ beforeEach(() => {
 
 test('not found', async () => {
     mockReadPet = async (id: string) => {
-        return new Promise((resolve) => resolve(new NotFound({ title: 'title' })));
+        return new Promise<NotFound>((resolve) => resolve(new NotFound({ title: 'title' })));
     };
 
     const localVue = createLocalVue();
@@ -66,7 +66,7 @@ test('minimal', async () => {
     });
 
     mockReadPet = async (id: string) => {
-        return new Promise((resolve) => resolve(pet));
+        return new Promise<PetResponse>((resolve) => resolve(pet));
     };
 
     const localVue = createLocalVue();
@@ -107,11 +107,11 @@ test('unprocessable entity', async () => {
     });
 
     mockReadPet = async (id: string) => {
-        return new Promise((resolve) => resolve(pet));
+        return new Promise<PetResponse>((resolve) => resolve(pet));
     };
 
     mockUpdatePet = async (id: string, pet: PetRequest) => {
-        return new Promise((resolve) => resolve(new UnprocessableEntity({ title: 'title' })));
+        return new Promise<UnprocessableEntity>((resolve) => resolve(new UnprocessableEntity({ title: 'title' })));
     };
 
     const localVue = createLocalVue();
@@ -172,11 +172,11 @@ test('successful', async () => {
     });
 
     mockReadPet = async (id: string) => {
-        return new Promise((resolve) => resolve(pet));
+        return new Promise<PetResponse>((resolve) => resolve(pet));
     };
 
     mockUpdatePet = async (id: string, pet: PetRequest) => {
-        return new Promise((resolve) => resolve(pet));
+        return new Promise<PetRequest>((resolve) => resolve(pet));
     };
 
     const localVue = createLocalVue();

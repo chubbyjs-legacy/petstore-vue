@@ -45,7 +45,7 @@ test('default', () => {
 
 test('unprocessable entity', async () => {
     mockCreatePet = async (pet: PetRequest) => {
-        return new Promise((resolve) => resolve(new UnprocessableEntity({ title: 'title' })));
+        return new Promise<UnprocessableEntity>((resolve) => resolve(new UnprocessableEntity({ title: 'title' })));
     };
 
     const localVue = createLocalVue();
@@ -93,7 +93,7 @@ test('unprocessable entity', async () => {
 
 test('successful', async () => {
     mockCreatePet = async (pet: PetRequest) => {
-        return new Promise((resolve) => resolve(pet));
+        return new Promise<PetRequest>((resolve) => resolve(pet));
     };
 
     const localVue = createLocalVue();

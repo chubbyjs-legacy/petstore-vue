@@ -31,7 +31,7 @@ beforeEach(() => {
 
 test('bad request', async () => {
     mockListPets = async (queryString: string) => {
-        return new Promise((resolve) => resolve(new BadRequest({ title: 'title' })));
+        return new Promise<BadRequest>((resolve) => resolve(new BadRequest({ title: 'title' })));
     };
 
     const localVue = createLocalVue();
@@ -117,7 +117,7 @@ test('default', async () => {
     });
 
     mockListPets = async (queryString: string) => {
-        return new Promise((resolve) => resolve(petList));
+        return new Promise<PetList>((resolve) => resolve(petList));
     };
 
     const localVue = createLocalVue();
@@ -210,7 +210,7 @@ test('no actions', async () => {
     });
 
     mockListPets = async (queryString: string) => {
-        return new Promise((resolve) => resolve(petList));
+        return new Promise<PetList>((resolve) => resolve(petList));
     };
 
     const localVue = createLocalVue();
@@ -338,7 +338,7 @@ test('submit bad request', async () => {
     });
 
     mockListPets = async (queryString: string) => {
-        return new Promise((resolve) => resolve(petList));
+        return new Promise<PetList>((resolve) => resolve(petList));
     };
 
     const localVue = createLocalVue();
@@ -371,7 +371,7 @@ test('submit bad request', async () => {
     await wrapper.vm.$nextTick();
 
     mockListPets = async (queryString: string) => {
-        return new Promise((resolve) => resolve(new BadRequest({ title: 'title' })));
+        return new Promise<BadRequest>((resolve) => resolve(new BadRequest({ title: 'title' })));
     };
 
     const submitButton = wrapper.find('[data-testid="test-filter-button"]');
@@ -491,7 +491,7 @@ test('submit filter', async () => {
     });
 
     mockListPets = async (queryString: string) => {
-        return new Promise((resolve) => resolve(petList));
+        return new Promise<PetList>((resolve) => resolve(petList));
     };
 
     const localVue = createLocalVue();
@@ -590,7 +590,7 @@ test('sort', async () => {
     });
 
     mockListPets = async (queryString: string) => {
-        return new Promise((resolve) => resolve(petList));
+        return new Promise<PetList>((resolve) => resolve(petList));
     };
 
     const localVue = createLocalVue();
@@ -689,7 +689,7 @@ test('next', async () => {
     });
 
     mockListPets = async (queryString: string) => {
-        return new Promise((resolve) => resolve(petList));
+        return new Promise<PetList>((resolve) => resolve(petList));
     };
 
     const localVue = createLocalVue();
@@ -783,7 +783,7 @@ test('delete not found', async () => {
     });
 
     mockListPets = async (queryString: string) => {
-        return new Promise((resolve) => resolve(petList));
+        return new Promise<PetList>((resolve) => resolve(petList));
     };
 
     const localVue = createLocalVue();
@@ -803,7 +803,7 @@ test('delete not found', async () => {
     await wrapper.vm.$nextTick();
 
     mockDeletePet = async (id: string) => {
-        return new Promise((resolve) => resolve(new NotFound({ title: 'title' })));
+        return new Promise<NotFound>((resolve) => resolve(new NotFound({ title: 'title' })));
     };
 
     const removeButton = wrapper.find('[data-testid="remove-pet-0"]');
@@ -922,7 +922,7 @@ test('delete success', async () => {
     });
 
     mockListPets = async (queryString: string) => {
-        return new Promise((resolve) => resolve(petList));
+        return new Promise<PetList>((resolve) => resolve(petList));
     };
 
     const localVue = createLocalVue();
@@ -966,7 +966,7 @@ test('delete success', async () => {
     });
 
     mockListPets = async (queryString: string) => {
-        return new Promise((resolve) => resolve(petListNoItem));
+        return new Promise<PetList>((resolve) => resolve(petListNoItem));
     };
 
     const removeButton = wrapper.find('[data-testid="remove-pet-0"]');
