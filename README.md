@@ -26,4 +26,4 @@ npm run test:unit
 
 ## Copyright
 
-Dominik Zogg 2020
+Dominik Zogg 2021
