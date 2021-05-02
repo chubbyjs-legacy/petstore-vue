@@ -37,7 +37,7 @@ test('default', () => {
         <div>
             <!---->
             <h1>Create Pet</h1>
-            <pet-form-stub submitpet="function () { [native code] }"></pet-form-stub>
+            <pet-form-stub submitpet="[Function]"></pet-form-stub>
             <router-link-stub to="/pet" tag="a" ariacurrentvalue="page" event="click" class="btn-gray mb-4">List</router-link-stub>
         </div>
     `.replace(/\n/g, '').replace(/ {2,}/g, '').replace(/> </g, '><'));

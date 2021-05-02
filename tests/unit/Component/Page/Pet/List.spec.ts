@@ -142,7 +142,7 @@ test('default', async () => {
             <h1>List Pets</h1>
             <div>
                 <router-link-stub to="/pet/create" tag="a" ariacurrentvalue="page" event="click" class="btn-green mb-4">Create</router-link-stub>
-                <pet-filter-form-stub submitpetfilter="function () { [native code] }" defaultpetfilters="[object Object]"></pet-filter-form-stub>
+                <pet-filter-form-stub submitpetfilter="[Function]" defaultpetfilters="[object Object]"></pet-filter-form-stub>
                 <table class="my-4">
                     <thead>
                         <tr>
@@ -181,7 +181,7 @@ test('default', async () => {
                         </tr>
                     </tbody>
                 </table>
-                <pagination-stub submitpage="function () { [native code] }" currentpage="1" totalpages="2" maxpages="7"></pagination-stub>
+                <pagination-stub submitpage="[Function]" currentpage="1" totalpages="2" maxpages="7"></pagination-stub>
             </div>
         </div>
     `.replace(/\n/g, '').replace(/ {2,}/g, '').replace(/> </g, '><'));
@@ -235,7 +235,7 @@ test('no actions', async () => {
             <h1>List Pets</h1>
             <div>
                 <!---->
-                <pet-filter-form-stub submitpetfilter="function () { [native code] }" defaultpetfilters="[object Object]"></pet-filter-form-stub>
+                <pet-filter-form-stub submitpetfilter="[Function]" defaultpetfilters="[object Object]"></pet-filter-form-stub>
                 <table class="my-4">
                     <thead>
                         <tr>
@@ -274,7 +274,7 @@ test('no actions', async () => {
                         </tr>
                     </tbody>
                 </table>
-                <pagination-stub submitpage="function () { [native code] }" currentpage="1" totalpages="2" maxpages="7"></pagination-stub>
+                <pagination-stub submitpage="[Function]" currentpage="1" totalpages="2" maxpages="7"></pagination-stub>
             </div>
         </div>
     `.replace(/\n/g, '').replace(/ {2,}/g, '').replace(/> </g, '><'));
@@ -427,7 +427,7 @@ test('submit bad request', async () => {
                         </tr>
                     </tbody>
                 </table>
-                <pagination-stub submitpage="function () { [native code] }" currentpage="1" totalpages="2" maxpages="7"></pagination-stub>
+                <pagination-stub submitpage="[Function]" currentpage="1" totalpages="2" maxpages="7"></pagination-stub>
             </div>
         </div>
     `.replace(/\n/g, '').replace(/ {2,}/g, '').replace(/> </g, '><'));
@@ -819,7 +819,7 @@ test('delete not found', async () => {
             <h1>List Pets</h1>
             <div>
                 <router-link-stub to="/pet/create" class="btn-green mb-4">Create</router-link-stub>
-                <pet-filter-form-stub submitpetfilter="function () { [native code] }" defaultpetfilters="[object Object]"></pet-filter-form-stub>
+                <pet-filter-form-stub submitpetfilter="[Function]" defaultpetfilters="[object Object]"></pet-filter-form-stub>
                 <table class="my-4">
                     <thead>
                         <tr>
@@ -858,7 +858,7 @@ test('delete not found', async () => {
                         </tr>
                     </tbody>
                 </table>
-                <pagination-stub submitpage="function () { [native code] }" currentpage="1" totalpages="2" maxpages="7"></pagination-stub>
+                <pagination-stub submitpage="[Function]" currentpage="1" totalpages="2" maxpages="7"></pagination-stub>
             </div>
         </div>
     `.replace(/\n/g, '').replace(/ {2,}/g, '').replace(/> </g, '><'));
@@ -984,7 +984,7 @@ test('delete success', async () => {
             <h1>List Pets</h1>
             <div>
                 <router-link-stub to="/pet/create" class="btn-green mb-4">Create</router-link-stub>
-                <pet-filter-form-stub submitpetfilter="function () { [native code] }" defaultpetfilters="[object Object]"></pet-filter-form-stub>
+                <pet-filter-form-stub submitpetfilter="[Function]" defaultpetfilters="[object Object]"></pet-filter-form-stub>
                 <table class="my-4">
                     <thead>
                         <tr>
@@ -1010,7 +1010,7 @@ test('delete success', async () => {
                     </thead>
                     <tbody></tbody>
                 </table>
-                <pagination-stub submitpage="function () { [native code] }" currentpage="1" totalpages="2" maxpages="7"></pagination-stub>
+                <pagination-stub submitpage="[Function]" currentpage="1" totalpages="2" maxpages="7"></pagination-stub>
             </div>
         </div>
     `.replace(/\n/g, '').replace(/ {2,}/g, '').replace(/> </g, '><'));

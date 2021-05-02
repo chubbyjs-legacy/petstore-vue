@@ -1,6 +1,6 @@
 <template>
   <div id="wrapper" v-bind:class="{ displayMenu: displayMenu }">
-    <nav id="top-nav" class="clearfix">
+    <nav id="top-nav" class="flow-root">
       <button id="toggle" data-testid="navigation-toggle" v-on:click="setDisplayMenu">
         <span></span>
         <span></span>

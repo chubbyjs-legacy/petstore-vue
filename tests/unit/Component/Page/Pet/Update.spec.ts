@@ -52,7 +52,7 @@ test('not found', async () => {
         <div>
             <http-error-partial-stub httperror="[object Object]"></http-error-partial-stub>
             <h1>Update Pet</h1>
-            <pet-form-stub submitpet="function () { [native code] }"></pet-form-stub>
+            <pet-form-stub submitpet="[Function]"></pet-form-stub>
             <router-link-stub to="/pet" tag="a" ariacurrentvalue="page" event="click" class="btn-gray mb-4">List</router-link-stub>
         </div>
     `.replace(/\n/g, '').replace(/ {2,}/g, '').replace(/> </g, '><'));
@@ -89,7 +89,7 @@ test('minimal', async () => {
         <div>
             <!---->
             <h1>Update Pet</h1>
-            <pet-form-stub submitpet="function () { [native code] }" defaultpet="[object Object]"></pet-form-stub>
+            <pet-form-stub submitpet="[Function]" defaultpet="[object Object]"></pet-form-stub>
             <router-link-stub to="/pet" tag="a" ariacurrentvalue="page" event="click" class="btn-gray mb-4">List</router-link-stub>
         </div>
     `.replace(/\n/g, '').replace(/ {2,}/g, '').replace(/> </g, '><'));
